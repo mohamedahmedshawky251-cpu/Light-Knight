@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c0xnvsfvl4exi"]
+
+[ext_resource type="Script" uid="uid://dp7nnjnxw1bur" path="res://Scripts/slime.gd" id="1_aiwxb"]
+[ext_resource type="Texture2D" uid="uid://cqroem57m2tgu" path="res://Assets/sprites/slime_green.png" id="1_swwnm"]
+[ext_resource type="PackedScene" uid="uid://bimg14romgmbv" path="res://Scenes/killzone.tscn" id="2_aiwxb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paq7w"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(72, 36, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4si1"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(48, 36, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gljc"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(24, 36, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vblni"]
+atlas = ExtResource("1_swwnm")
+region = Rect2(0, 36, 24, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e388w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paq7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4si1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gljc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vblni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4o34"]
+size = Vector2(12, 12)
+
+[node name="slime" type="Node2D" unique_id=651559459]
+script = ExtResource("1_aiwxb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1053171634]
+sprite_frames = SubResource("SpriteFrames_e388w")
+autoplay = "default"
+frame_progress = 0.9268327
+flip_h = true
+
+[node name="killzone" parent="." unique_id=385664695 instance=ExtResource("2_aiwxb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=58336427]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_r4o34")
+
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=497215692]
+target_position = Vector2(16, 0)
+
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=640163096]
+target_position = Vector2(-16, 0)
