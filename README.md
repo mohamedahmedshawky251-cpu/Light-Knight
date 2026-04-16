@@ -1,3 +1,18 @@
-# Light Knight
-- Light Knight is a 2d platformer game created with godot 4.
--  The player should jump on platforms, collect coins, and avoid enemies to win.
+# Light knight
+
+## Description
+This is a simple 2D game developed using Godot. The player moves around the map to collect coins while avoiding enemies. The goal is to collect as many coins as possible without getting caught.
+
+- movable platforms can the player hold on it and go up
+
+
+
+## Controls
+- Arrow Keys or WASD: Move the player
+
+
+## virsual
+- Godot Engine 
+
+
+
